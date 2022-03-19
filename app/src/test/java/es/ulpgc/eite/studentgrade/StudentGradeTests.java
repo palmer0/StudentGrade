@@ -287,7 +287,7 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndSeeValueOnView("grade", "9", "lower");
     steps.iAmOnScreenAndSeeValueOnView("grade", "10", "higher");
     steps.iAmOnScreenAndPressButton("grade", "lower");
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
 
     // When
     steps.iRotateScreen("student");
@@ -308,7 +308,7 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndSeeValueOnView("grade", "9", "lower");
     steps.iAmOnScreenAndSeeValueOnView("grade", "10", "higher");
     steps.iAmOnScreenAndPressButton("grade", "higher");
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
 
     // When
     steps.iRotateScreen("student");
@@ -332,7 +332,7 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndSeeValueOnView("grade", "7", "lower");
     steps.iAmOnScreenAndSeeValueOnView("grade", "8", "higher");
     steps.iAmOnScreenAndPressButton("grade", "higher");
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
 
     // When
     steps.iRotateScreen("student");
@@ -353,7 +353,7 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndSeeValueOnView("grade", "7", "lower");
     steps.iAmOnScreenAndSeeValueOnView("grade", "8", "higher");
     steps.iAmOnScreenAndPressButton("grade", "lower");
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
 
     // When
     steps.iRotateScreen("student");
@@ -376,7 +376,7 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndSeeValueOnView("grade", "5", "lower");
     steps.iAmOnScreenAndSeeValueOnView("grade", "6", "higher");
     steps.iAmOnScreenAndPressButton("grade", "higher");
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
 
     // When
     steps.iRotateScreen("student");
@@ -398,7 +398,7 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndSeeValueOnView("grade", "5", "lower");
     steps.iAmOnScreenAndSeeValueOnView("grade", "6", "higher");
     steps.iAmOnScreenAndPressButton("grade", "lower");
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
 
     // When
     steps.iRotateScreen("student");
@@ -422,13 +422,22 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndSeeValueOnView("grade", "5", "lower");
     steps.iAmOnScreenAndSeeValueOnView("grade", "6", "higher");
 
+    steps.iAmOnScreenAndPressButton("grade", "lower");
+    steps.iBackOnScreen("student");
+    steps.iAmOnScreenAndSeeValueOnView("student", "5", "grade");
+    steps.iAmOnScreenAndPressButton("student", "mention");
+    steps.iAmOnScreen("grade");
+    steps.iRotateScreen("grade");
+    steps.iAmOnScreenAndSeeValueOnView("grade", "7", "lower");
+    steps.iAmOnScreenAndSeeValueOnView("grade", "8", "higher");
+
     // When
     steps.iAmOnScreenAndPressButton("grade", "back");
 
     // Then
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
     // Then
-    steps.iAmOnScreenAndSeeValueOnView("student", "0", "grade");
+    steps.iAmOnScreenAndSeeValueOnView("student", "5", "grade");
   }
 
   @Test
@@ -441,14 +450,22 @@ public class StudentGradeTests {
     steps.iAmOnScreen("grade");
     steps.iAmOnScreenAndSeeValueOnView("grade", "5", "lower");
     steps.iAmOnScreenAndSeeValueOnView("grade", "6", "higher");
+    steps.iAmOnScreenAndPressButton("grade", "lower");
+    steps.iBackOnScreen("student");
+    steps.iAmOnScreenAndSeeValueOnView("student", "5", "grade");
+    steps.iAmOnScreenAndPressButton("student", "mention");
+    steps.iAmOnScreen("grade");
+    steps.iRotateScreen("grade");
+    steps.iAmOnScreenAndSeeValueOnView("grade", "7", "lower");
+    steps.iAmOnScreenAndSeeValueOnView("grade", "8", "higher");
     steps.iAmOnScreenAndPressButton("grade", "back");
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
 
     // When
     steps.iRotateScreen("student");
 
     // Then
-    steps.iAmOnScreenAndSeeValueOnView("student", "0", "grade");
+    steps.iAmOnScreenAndSeeValueOnView("student", "5", "grade");
   }
 
 }
