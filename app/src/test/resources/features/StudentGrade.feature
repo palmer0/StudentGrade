@@ -38,7 +38,6 @@ Feature: StudentGrade
 
   Scenario Outline: Scenario 3
     Given I am on "<screen2>" screen
-    And I rotate "<screen2>" screen
     And I am on "<screen2>" screen and see "<val1>" value on "<view1>" view
     And I am on "<screen2>" screen and see "<val2>" value on "<view2>" view
     When I am on "<screen2>" screen and press "<button>" button
