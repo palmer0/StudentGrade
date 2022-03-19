@@ -43,6 +43,9 @@ public class StudentPresenter implements StudentContract.Presenter {
 
     // update the model if is necessary
     //model.onRestartScreen(state.data);
+
+    // update the view
+    //view.get().onDataUpdated(state);
   }
 
   @Override
@@ -60,11 +63,28 @@ public class StudentPresenter implements StudentContract.Presenter {
       state.data = savedState.data;
     }
 
+    /*
+    if (savedState != null) {
+
+      StudentState tmpState = new StudentState();
+      tmpState.data=savedState.data;
+      view.get().onDataUpdated(tmpState);
+
+    } else {
+
+      StudentState tmpState = new StudentState();
+      tmpState.data = model.getStoredData();
+      view.get().onDataUpdated(tmpState);
+
+    }
+    */
+
     // call the model and update the state
     //state.data = model.getStoredData();
 
     // update the view
     view.get().onDataUpdated(state);
+
   }
 
   @Override
@@ -75,6 +95,12 @@ public class StudentPresenter implements StudentContract.Presenter {
   @Override
   public void onPause() {
     // Log.e(TAG, "onPause()");
+
+    // call the model and update the state
+    //state.data = model.getStoredData();
+
+    // update the view
+    //view.get().onDataUpdated(state);
   }
 
   @Override

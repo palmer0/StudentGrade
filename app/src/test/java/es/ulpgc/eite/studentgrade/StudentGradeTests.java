@@ -13,6 +13,40 @@ public class StudentGradeTests {
 
   StudentGradeSteps steps = new StudentGradeSteps();
 
+  /*
+  @Test
+  public void Scenario0A() {
+
+    // Given
+    steps.iAmOnScreen("student");
+    steps.iAmOnScreenAndSeeValueOnView("student", "?", "grade");
+    steps.iAmOnScreenAndPressButton("student", "outstanding");
+    steps.iAmOnScreen("grade");
+    steps.iAmOnScreenAndSeeValueOnView("grade", "9", "lower");
+    steps.iAmOnScreenAndSeeValueOnView("grade", "10", "higher");
+
+    // When
+    steps.iAmOnScreenAndPressButton("student", "back");
+
+    // Then
+    steps.iAmOnScreenAndSeeValueOnView("student", "0", "grade");
+  }
+
+
+  @Test
+  public void Scenario0B() {
+
+    // Given
+    steps.iAmOnScreen("student");
+    steps.iAmOnScreenAndSeeValueOnView("student", "?", "grade");
+
+    // When
+    steps.iRotateScreen("student");
+
+    // Then
+    steps.iAmOnScreenAndSeeValueOnView("student", "0", "grade");
+  }
+  */
 
   @Test
   public void Scenario012A() {
@@ -79,7 +113,7 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndPressButton("grade", "lower");
 
     // Then
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
     steps.iAmOnScreenAndSeeValueOnView("student", "9", "grade");
   }
 
@@ -98,7 +132,7 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndPressButton("grade", "higher");
 
     // Then
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
     steps.iAmOnScreenAndSeeValueOnView("student", "10", "grade");
   }
 
@@ -120,7 +154,7 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndPressButton("grade", "higher");
 
     // Then
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
     steps.iAmOnScreenAndSeeValueOnView("student", "8", "grade");
   }
 
@@ -139,7 +173,7 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndPressButton("grade", "lower");
 
     // Then
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
     steps.iAmOnScreenAndSeeValueOnView("student", "7", "grade");
   }
 
@@ -160,7 +194,7 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndPressButton("grade", "higher");
 
     // Then
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
     steps.iAmOnScreenAndSeeValueOnView("student", "6", "grade");
   }
 
@@ -180,13 +214,13 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndPressButton("grade", "lower");
 
     // Then
-    steps.iAmOnScreen("student");
+    steps.iBackOnScreen("student");
     steps.iAmOnScreenAndSeeValueOnView("student", "5", "grade");
   }
 
+  /*
 
-
-  // -----
+  // ---------------
 
   @Test
   public void Scenario102B() {
@@ -373,5 +407,7 @@ public class StudentGradeTests {
     // Then
     steps.iAmOnScreenAndSeeValueOnView("student", "5", "grade");
   }
+
+  */
 
 }
