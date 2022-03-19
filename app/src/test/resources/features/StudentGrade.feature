@@ -35,6 +35,7 @@ Feature: StudentGrade
       | grade   | 5    | lower | 6    | higher | higher | student | 6    | grade |
       | grade   | 5    | lower | 6    | higher | lower  | student | 5    | grade |
 
+
   Scenario Outline: Scenario 3
     Given I am on "<screen2>" screen
     And I rotate "<screen2>" screen
