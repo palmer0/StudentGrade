@@ -23,8 +23,6 @@ import io.cucumber.java.en.When;
  */
 public class StudentGradeSteps {
 
-  //private ActivityScenario<StudentActivity> student;
-  //private ActivityScenario<GradeActivity> grade;
 
   private ActivityController<StudentActivity> studentTestCtrl;
   private ActivityController<GradeActivity> gradeTestCtrl;
@@ -44,30 +42,11 @@ public class StudentGradeSteps {
       gradeTestCtrl.create().resume().visible();
     }
 
-    /*
-    Class activity = (screen.equals("student"))
-        ? StudentActivity.class : GradeActivity.class;
-    ActivityScenario scenario = ActivityScenario.launch(activity);
-
-    if(screen.equals("student")){
-      student = scenario;
-
-    } else {
-      grade = scenario;
-
-    }
-
-    scenario.moveToState(Lifecycle.State.CREATED);
-    scenario.moveToState(Lifecycle.State.RESUMED);
-    */
-
   }
 
 
   @Then("I back on {string} screen")
   public void iBackOnScreen(String screen) {
-    //ActivityScenario scenario = (screen.equals("student")) ? grade : student;
-    //scenario.moveToState(Lifecycle.State.DESTROYED);
 
     if(screen.equals("student")) {
       studentTestCtrl.resume();
@@ -86,14 +65,6 @@ public class StudentGradeSteps {
     int viewId = (view.equals("lower")) ? R.id.btnLowerGrade :
         ((view.equals("higher")) ? R.id.btnHigherGrade : R.id.tvStudentGrade);
 
-    /*
-    ActivityScenario scenario = (screen.equals("student")) ? student : grade;
-
-    scenario.onActivity(activity -> {
-      TextView tv = (TextView) activity.findViewById(viewId);
-      assertThat(tv.getText().toString(), equalTo(value));
-    });
-    */
 
     if(screen.equals("student")) {
       StudentActivity activity = studentTestCtrl.get();
@@ -111,28 +82,6 @@ public class StudentGradeSteps {
 
   @When("I am on {string} screen and press {string} button")
   public void iAmOnScreenAndPressButton(String screen, String button) {
-
-    /*
-    int viewId;
-
-    if(screen.equals("student")) {
-
-      viewId = (button.equals("outstanding")) ? R.id.btnOutstandingGrade :
-          ((button.equals("mention")) ? R.id.btnMentionGrade : R.id.btnPassGrade);
-
-    } else {
-
-      viewId = (button.equals("lower")) ? R.id.btnLowerGrade : R.id.btnHigherGrade;
-    }
-
-    ActivityScenario scenario = (screen.equals("student")) ? student : grade;
-
-    scenario.onActivity(activity -> {
-      Button btn = (Button) activity.findViewById(viewId);
-      btn.performClick();
-    });
-    */
-
 
     if(screen.equals("student")) {
       StudentActivity activity = studentTestCtrl.get();
@@ -197,17 +146,6 @@ public class StudentGradeSteps {
           .resume()
           .visible();
     }
-
-    /*
-    ActivityScenario scenario = (screen.equals("student")) ? student : grade;
-
-    scenario.onActivity(activity -> {
-
-      activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-      activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-    });
-    */
 
   }
 

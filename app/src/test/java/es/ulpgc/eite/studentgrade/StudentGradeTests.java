@@ -218,7 +218,6 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndSeeValueOnView("student", "5", "grade");
   }
 
-  /*
 
   // ---------------
 
@@ -408,6 +407,48 @@ public class StudentGradeTests {
     steps.iAmOnScreenAndSeeValueOnView("student", "5", "grade");
   }
 
-  */
+
+  // -----
+
+
+  @Test
+  public void Scenario195A() {
+
+    // Given
+    steps.iAmOnScreen("student");
+    steps.iAmOnScreenAndSeeValueOnView("student", "0", "grade");
+    steps.iAmOnScreenAndPressButton("student", "pass");
+    steps.iAmOnScreen("grade");
+    steps.iAmOnScreenAndSeeValueOnView("grade", "5", "lower");
+    steps.iAmOnScreenAndSeeValueOnView("grade", "6", "higher");
+
+    // When
+    steps.iAmOnScreenAndPressButton("grade", "back");
+
+    // Then
+    steps.iAmOnScreen("student");
+    // Then
+    steps.iAmOnScreenAndSeeValueOnView("student", "0", "grade");
+  }
+
+  @Test
+  public void Scenario205B() {
+
+    // Given
+    steps.iAmOnScreen("student");
+    steps.iAmOnScreenAndSeeValueOnView("student", "0", "grade");
+    steps.iAmOnScreenAndPressButton("student", "pass");
+    steps.iAmOnScreen("grade");
+    steps.iAmOnScreenAndSeeValueOnView("grade", "5", "lower");
+    steps.iAmOnScreenAndSeeValueOnView("grade", "6", "higher");
+    steps.iAmOnScreenAndPressButton("grade", "back");
+    steps.iAmOnScreen("student");
+
+    // When
+    steps.iRotateScreen("student");
+
+    // Then
+    steps.iAmOnScreenAndSeeValueOnView("student", "0", "grade");
+  }
 
 }
