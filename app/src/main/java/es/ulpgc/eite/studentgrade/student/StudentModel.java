@@ -3,8 +3,7 @@ package es.ulpgc.eite.studentgrade.student;
 /**
  * Created by Luis on marzo, 2022
  */
-public class
-StudentModel implements StudentContract.Model {
+public class StudentModel implements StudentContract.Model {
 
   public static String TAG = "StudentGrade.StudentModel";
 
