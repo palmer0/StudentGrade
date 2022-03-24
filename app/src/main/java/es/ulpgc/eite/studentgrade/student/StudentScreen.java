@@ -17,12 +17,13 @@ public class StudentScreen {
     WeakReference<FragmentActivity> context =
         new WeakReference<>((FragmentActivity) view);
 
-    String data = context.get().getString(R.string.default_student_grade);
 
     AppMediator mediator = AppMediator.getInstance();
-
     StudentContract.Presenter presenter = new StudentPresenter(mediator);
+
+    String data = context.get().getString(R.string.default_student_grade);
     StudentContract.Model model = new StudentModel(data);
+
     presenter.injectModel(model);
     presenter.injectView(new WeakReference<>(view));
 
