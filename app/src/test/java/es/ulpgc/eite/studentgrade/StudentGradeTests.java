@@ -1,21 +1,24 @@
 package es.ulpgc.eite.studentgrade;
 
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.robolectric.RobolectricTestRunner;
 
 /**
  * Created by Luis on marzo, 2022
  */
 @RunWith(RobolectricTestRunner.class)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StudentGradeTests {
 
   StudentGradeSteps steps = new StudentGradeSteps();
 
 
   @Test
-  public void Scenario012A() {
+  public void test01Scenario012A() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -31,7 +34,7 @@ public class StudentGradeTests {
   }
 
   @Test
-  public void Scenario023A() {
+  public void test02Scenario023A() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -47,7 +50,7 @@ public class StudentGradeTests {
   }
 
   @Test
-  public void Scenario034A() {
+  public void test03Scenario034A() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -65,7 +68,7 @@ public class StudentGradeTests {
   // -----
 
   @Test
-  public void Scenario0421A() {
+  public void test04Scenario0421A() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -84,7 +87,7 @@ public class StudentGradeTests {
   }
 
   @Test
-  public void Scenario0522A() {
+  public void test05Scenario0522A() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -106,7 +109,7 @@ public class StudentGradeTests {
 
 
   @Test
-  public void Scenario0631A() {
+  public void test06Scenario0631A() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -125,7 +128,7 @@ public class StudentGradeTests {
   }
 
   @Test
-  public void Scenario0732A() {
+  public void test07Scenario0732A() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -146,7 +149,7 @@ public class StudentGradeTests {
   // -----
 
   @Test
-  public void Scenario0841A() {
+  public void test08Scenario0841A() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -166,7 +169,7 @@ public class StudentGradeTests {
 
 
   @Test
-  public void Scenario0942A() {
+  public void test09Scenario0942A() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -188,7 +191,7 @@ public class StudentGradeTests {
   // ---------------
 
   @Test
-  public void Scenario102B() {
+  public void test10Scenario102B() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -205,7 +208,7 @@ public class StudentGradeTests {
   }
 
   @Test
-  public void Scenario113B() {
+  public void test11Scenario113B() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -222,7 +225,7 @@ public class StudentGradeTests {
   }
 
   @Test
-  public void Scenario124B() {
+  public void test12Scenario124B() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -242,7 +245,7 @@ public class StudentGradeTests {
   // -----
 
   @Test
-  public void Scenario1321B() {
+  public void test13Scenario1321B() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -263,7 +266,7 @@ public class StudentGradeTests {
   }
 
   @Test
-  public void Scenario1422B() {
+  public void test14Scenario1422B() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -287,7 +290,7 @@ public class StudentGradeTests {
 
 
   @Test
-  public void Scenario1531B() {
+  public void test15Scenario1531B() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -308,7 +311,7 @@ public class StudentGradeTests {
   }
 
   @Test
-  public void Scenario1632B() {
+  public void test16Scenario1632B() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -331,7 +334,7 @@ public class StudentGradeTests {
   // -----
 
   @Test
-  public void Scenario1741B() {
+  public void test17Scenario1741B() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -353,7 +356,7 @@ public class StudentGradeTests {
 
 
   @Test
-  public void Scenario1842B() {
+  public void test18Scenario1842B() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -378,7 +381,7 @@ public class StudentGradeTests {
 
 
   @Test
-  public void Scenario195A() {
+  public void test19Scenario195A() {
 
     // Given
     steps.iAmOnScreen("student");
@@ -407,7 +410,7 @@ public class StudentGradeTests {
   }
 
   @Test
-  public void Scenario205B() {
+  public void test20Scenario205B() {
 
     // Given
     steps.iAmOnScreen("student");
