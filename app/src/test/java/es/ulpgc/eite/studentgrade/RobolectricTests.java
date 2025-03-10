@@ -12,9 +12,9 @@ import org.robolectric.RobolectricTestRunner;
  */
 @RunWith(RobolectricTestRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class StudentGradeTests {
+public class RobolectricTests {
 
-  StudentGradeSteps steps = new StudentGradeSteps();
+  RobolectricSteps steps = new RobolectricSteps();
 
 
   @Test

@@ -13,22 +13,17 @@ import org.robolectric.android.controller.ActivityController;
 
 import es.ulpgc.eite.studentgrade.grade.GradeActivity;
 import es.ulpgc.eite.studentgrade.student.StudentActivity;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 
 /**
  * Created by Luis on marzo, 2022
  */
-public class StudentGradeSteps {
+public class RobolectricSteps {
 
 
   private ActivityController<StudentActivity> studentTestCtrl;
   private ActivityController<GradeActivity> gradeTestCtrl;
 
 
-  @Given("I am on {string} screen")
   public void iAmOnScreen(String screen) {
 
     if(screen.equals("student")) {
@@ -45,7 +40,6 @@ public class StudentGradeSteps {
   }
 
 
-  @Then("I back on {string} screen")
   public void iBackOnScreen(String screen) {
 
     if(screen.equals("student")) {
@@ -57,7 +51,6 @@ public class StudentGradeSteps {
 
   }
 
-  @And("I am on {string} screen and see {string} value on {string} view")
   public void iAmOnScreenAndSeeValueOnView(
       String screen, String value, String view
   ) {
@@ -80,7 +73,6 @@ public class StudentGradeSteps {
     }
   }
 
-  @When("I am on {string} screen and press {string} button")
   public void iAmOnScreenAndPressButton(String screen, String button) {
 
     if(screen.equals("student")) {
@@ -114,7 +106,6 @@ public class StudentGradeSteps {
   }
 
 
-  @And("I rotate {string} screen")
   public void iRotateScreen(String screen) {
 
 
