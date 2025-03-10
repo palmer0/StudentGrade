@@ -25,8 +25,6 @@ import es.ulpgc.eite.studentgrade.student.StudentActivity;
 public class EspressoSteps {
 
 
-  //private ActivityController<StudentActivity> studentTestCtrl;
-  //private ActivityController<GradeActivity> gradeTestCtrl;
 
   private ActivityScenario<StudentActivity> studentScenario;
 
@@ -37,18 +35,6 @@ public class EspressoSteps {
 
     }
 
-    /*
-    if(screen.equals("student")) {
-      studentTestCtrl = Robolectric.buildActivity(StudentActivity.class);
-      studentTestCtrl.create().resume().visible();
-
-    } else {
-      studentTestCtrl.pause();
-
-      gradeTestCtrl = Robolectric.buildActivity(GradeActivity.class);
-      gradeTestCtrl.create().resume().visible();
-    }
-    */
 
     try {
       Thread.sleep(700);
@@ -62,23 +48,14 @@ public class EspressoSteps {
   public void iBackOnScreen(String screen) {
 
     if (screen.equals("student")) {
-      //onView(withId(R.id.tvStudentGrade)).check(matches(isDisplayed()));
       onView(withId(R.id.tvStudentGrade))
           .check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+
     } else {
-      //onView(withId(R.id.btnLowerGrade)).check(matches(isDisplayed()));
       onView(withId(R.id.btnLowerGrade))
           .check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
     }
 
-    /*
-    if(screen.equals("student")) {
-      studentTestCtrl.resume();
-
-    } else {
-      gradeTestCtrl.resume();
-    }
-    */
 
     try {
       Thread.sleep(700);
@@ -97,20 +74,6 @@ public class EspressoSteps {
 
     onView(withId(viewId)).check(matches(withText(value)));
 
-    /*
-    if(screen.equals("student")) {
-      StudentActivity activity = studentTestCtrl.get();
-
-      TextView tv = (TextView) activity.findViewById(viewId);
-      assertThat(tv.getText().toString(), equalTo(value));
-
-    } else {
-      GradeActivity activity = gradeTestCtrl.get();
-
-      Button btn = (Button) activity.findViewById(viewId);
-      assertThat(btn.getText().toString(), equalTo(value));
-    }
-    */
   }
 
   public void iAmOnScreenAndPressButton(String screen, String button) {
@@ -118,14 +81,17 @@ public class EspressoSteps {
     if (screen.equals("student")) {
       if (button.equals("back")) {
         pressBack();
+
       } else {
         int viewId = button.equals("outstanding") ? R.id.btnOutstandingGrade :
             (button.equals("mention") ? R.id.btnMentionGrade : R.id.btnPassGrade);
         onView(withId(viewId)).perform(click());
       }
+
     } else {
       if (button.equals("back")) {
         pressBack();
+
       } else {
         int viewId = button.equals("lower") ? R.id.btnLowerGrade : R.id.btnHigherGrade;
         onView(withId(viewId)).perform(click());
@@ -133,48 +99,10 @@ public class EspressoSteps {
     }
 
 
-    /*
-    if(screen.equals("student")) {
-      StudentActivity activity = studentTestCtrl.get();
-
-      if(button.equals("back")) {
-        activity.onBackPressed();
-
-      } else {
-        int viewId = (button.equals("outstanding")) ? R.id.btnOutstandingGrade :
-            ((button.equals("mention")) ? R.id.btnMentionGrade : R.id.btnPassGrade);
-
-        Button btn = activity.findViewById(viewId);
-        btn.performClick();
-      }
-
-    } else {
-      GradeActivity activity = gradeTestCtrl.get();
-
-      if(button.equals("back")) {
-        activity.onBackPressed();
-
-      } else {
-        int viewId =
-            (button.equals("lower")) ? R.id.btnLowerGrade : R.id.btnHigherGrade;
-
-        Button btn = activity.findViewById(viewId);
-        btn.performClick();
-      }
-    }
-    */
   }
 
 
   public void iRotateScreen(String screen) {
-
-    /*
-    if (screen.equals("student")) {
-      if (studentScenario != null) {
-        studentScenario.recreate();
-      }
-    }
-    */
 
     studentScenario.onActivity(activity -> {
       Context context = ApplicationProvider.getApplicationContext();
@@ -187,36 +115,6 @@ public class EspressoSteps {
       }
     });
 
-    /*
-    Bundle bundle = new Bundle();
-
-    if(screen.equals("student")) {
-      studentTestCtrl
-          .saveInstanceState(bundle)
-          .pause()
-          .stop()
-          .destroy();
-
-      studentTestCtrl = Robolectric.buildActivity(StudentActivity.class)
-          .create(bundle)
-          .restoreInstanceState(bundle)
-          .resume()
-          .visible();
-
-    } else {
-      gradeTestCtrl
-          .saveInstanceState(bundle)
-          .pause()
-          .stop()
-          .destroy();
-
-      gradeTestCtrl = Robolectric.buildActivity(GradeActivity.class)
-          .create(bundle)
-          .restoreInstanceState(bundle)
-          .resume()
-          .visible();
-    }
-    */
 
   }
 
