@@ -26,8 +26,8 @@ public class StudentPresenter implements StudentContract.Presenter {
   }
 
   @Override
-  public void onStart() {
-    // Log.e(TAG, "onStart()");
+  public void onCreateCalled() {
+    // Log.e(TAG, "onCreateCalled()");
 
     // initialize the state 
     //state = new StudentState();
@@ -38,8 +38,11 @@ public class StudentPresenter implements StudentContract.Presenter {
   }
 
   @Override
-  public void onRestart() {
-    // Log.e(TAG, "onRestart()");
+  public void onRecreateCalled() {
+    // Log.e(TAG, "onRecreateCalled()");
+
+    // get the saved state
+    //state = mediator.getStudentState();
 
     // update the model if is necessary
     //model.onRestartScreen(state.data);
@@ -49,8 +52,8 @@ public class StudentPresenter implements StudentContract.Presenter {
   }
 
   @Override
-  public void onResume() {
-    Log.e(TAG, "onResume()");
+  public void onResumeCalled() {
+    Log.e(TAG, "onResumeCalled()");
 
     // use passed state if is necessary
     GradeToStudentState savedState = getStateFromNextScreen();
@@ -72,13 +75,13 @@ public class StudentPresenter implements StudentContract.Presenter {
   }
 
   @Override
-  public void onBackPressed() {
-    // Log.e(TAG, "onBackPressed()");
+  public void onBackPressedCalled() {
+    // Log.e(TAG, "onBackPressedCalled()");
   }
 
   @Override
-  public void onPause() {
-    // Log.e(TAG, "onPause()");
+  public void onPauseCalled() {
+    // Log.e(TAG, "onPauseCalled()");
 
     // call the model and update the state
     //state.data = model.getStoredData();
@@ -88,8 +91,8 @@ public class StudentPresenter implements StudentContract.Presenter {
   }
 
   @Override
-  public void onDestroy() {
-    // Log.e(TAG, "onDestroy()");
+  public void onDestroyCalled() {
+    // Log.e(TAG, "onDestroyCalled()");
   }
 
   private void onGradeBtnClicked(String data) {

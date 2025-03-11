@@ -20,17 +20,17 @@ public interface StudentContract {
 
     void injectModel(Model model);
 
-    void onResume();
+    void onResumeCalled();
 
-    void onStart();
+    void onCreateCalled();
 
-    void onRestart();
+    void onRecreateCalled();
 
-    void onBackPressed();
+    void onBackPressedCalled();
 
-    void onPause();
+    void onPauseCalled();
 
-    void onDestroy();
+    void onDestroyCalled();
 
     void onOutstandingGradeBtnClicked();
 
