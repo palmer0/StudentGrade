@@ -22,7 +22,7 @@ public class StudentPresenter implements StudentContract.Presenter {
 
   public StudentPresenter(AppMediator mediator) {
     this.mediator = mediator;
-    state = mediator.getStudentState();
+    //state = mediator.getStudentState();
   }
 
   @Override
@@ -30,7 +30,7 @@ public class StudentPresenter implements StudentContract.Presenter {
     Log.e(TAG, "onCreateCalled()");
 
     // initialize the state 
-    //state = new StudentState();
+    state = new StudentState();
 
     // call the model and update the state
     state.data = model.getStoredData();
@@ -42,7 +42,7 @@ public class StudentPresenter implements StudentContract.Presenter {
     Log.e(TAG, "onRecreateCalled()");
 
     // get the saved state
-    //state = mediator.getStudentState();
+    state = mediator.getStudentState();
 
     // update the model if is necessary
     //model.onRestartScreen(state.data);
@@ -88,6 +88,9 @@ public class StudentPresenter implements StudentContract.Presenter {
 
     // update the view
     //view.get().onDataUpdated(state);
+
+    // save the current state
+    mediator.setStudentState(state);
   }
 
   @Override

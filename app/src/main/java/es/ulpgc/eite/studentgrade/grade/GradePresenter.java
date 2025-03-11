@@ -22,7 +22,7 @@ public class GradePresenter implements GradeContract.Presenter {
 
   public GradePresenter(AppMediator mediator) {
     this.mediator = mediator;
-    state = mediator.getGradeState();
+    //state = mediator.getGradeState();
   }
 
   @Override
@@ -30,7 +30,7 @@ public class GradePresenter implements GradeContract.Presenter {
     Log.e(TAG, "onCreateCalled()");
 
     // initialize the state 
-    //state = new GradeState();
+    state = new GradeState();
 
     // call the model and update the state
     state.data = model.getStoredData();
@@ -53,7 +53,7 @@ public class GradePresenter implements GradeContract.Presenter {
     Log.e(TAG, "onRecreateCalled()");
 
     // get the saved state
-    //state = mediator.getGradeState();
+    state = mediator.getGradeState();
 
     // update the model if is necessary
     //model.onRestartScreen(state.data);
@@ -79,6 +79,9 @@ public class GradePresenter implements GradeContract.Presenter {
   @Override
   public void onPauseCalled() {
     Log.e(TAG, "onPauseCalled()");
+
+    // save the current state
+    mediator.setGradeState(state);
   }
 
   @Override

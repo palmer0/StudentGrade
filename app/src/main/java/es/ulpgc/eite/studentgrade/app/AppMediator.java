@@ -44,6 +44,14 @@ public class AppMediator {
     return mGradeState;
   }
 
+  public void setGradeState(GradeState state) {
+    this.mGradeState = state;
+  }
+
+  public void setStudentState(StudentState state) {
+    this.mStudentState = state;
+  }
+
   public GradeToStudentState getNextStudentScreenState() {
     GradeToStudentState state = mGradeToStudentState;
     mGradeToStudentState=null;
