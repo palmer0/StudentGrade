@@ -1,5 +1,7 @@
 package es.ulpgc.eite.studentgrade.grade;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.studentgrade.app.AppMediator;
@@ -25,7 +27,7 @@ public class GradePresenter implements GradeContract.Presenter {
 
   @Override
   public void onCreateCalled() {
-    // Log.e(TAG, "onCreateCalled()");
+    Log.e(TAG, "onCreateCalled()");
 
     // initialize the state 
     //state = new GradeState();
@@ -48,7 +50,7 @@ public class GradePresenter implements GradeContract.Presenter {
 
   @Override
   public void onRecreateCalled() {
-    // Log.e(TAG, "onRecreateCalled()");
+    Log.e(TAG, "onRecreateCalled()");
 
     // get the saved state
     //state = mediator.getGradeState();
@@ -59,7 +61,7 @@ public class GradePresenter implements GradeContract.Presenter {
 
   @Override
   public void onResumeCalled() {
-    // Log.e(TAG, "onResumeCalled()");
+    Log.e(TAG, "onResumeCalled()");
 
     // call the model and update the state
     //state.data = model.getStoredData();
@@ -71,20 +73,22 @@ public class GradePresenter implements GradeContract.Presenter {
 
   @Override
   public void onBackPressedCalled() {
-    // Log.e(TAG, "onBackPressedCalled()");
+    Log.e(TAG, "onBackPressedCalled()");
   }
 
   @Override
   public void onPauseCalled() {
-    // Log.e(TAG, "onPauseCalled()");
+    Log.e(TAG, "onPauseCalled()");
   }
 
   @Override
   public void onDestroyCalled() {
-    // Log.e(TAG, "onDestroyCalled()");
+    Log.e(TAG, "onDestroyCalled()");
   }
 
   public void onGradeBtnClicked(String data) {
+    Log.e(TAG, "onGradeBtnClicked()");
+
     GradeToStudentState newState = new GradeToStudentState();
     newState.data=data;
     passStateToPreviousScreen(newState);
@@ -93,6 +97,8 @@ public class GradePresenter implements GradeContract.Presenter {
 
   @Override
   public void onHigherGradeBtnClicked() {
+    Log.e(TAG, "onHigherGradeBtnClicked()");
+
     String[] data = state.data.split(",");
     onGradeBtnClicked(data[1]);
 
@@ -100,6 +106,8 @@ public class GradePresenter implements GradeContract.Presenter {
 
   @Override
   public void onLowerGradeBtnClicked() {
+    Log.e(TAG, "onLowerGradeBtnClicked()");
+
     String[] data = state.data.split(",");
     onGradeBtnClicked(data[0]);
 
