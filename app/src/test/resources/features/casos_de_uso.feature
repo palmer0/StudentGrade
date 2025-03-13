@@ -1,0 +1,170 @@
+# language: es
+Característica: Calificación de estudiantes
+
+  Antecedentes:
+    Dado que estoy en la pantalla "student"
+    Y veo "0" en la vista "grade"
+
+  # Escenarios sin rotación ni navegación atrás
+
+  Escenario: Scenario012A - Evaluación "outstanding"
+    Cuando presiono el botón "outstanding" en la pantalla "student"
+    Entonces debo estar en la pantalla "grade"
+    Y veo "9" en la vista "lower" de la pantalla "grade"
+    Y veo "10" en la vista "higher" de la pantalla "grade"
+
+  Escenario: Scenario023A - Evaluación "mention"
+    Cuando presiono el botón "mention" en la pantalla "student"
+    Entonces debo estar en la pantalla "grade"
+    Y veo "7" en la vista "lower" de la pantalla "grade"
+    Y veo "8" en la vista "higher" de la pantalla "grade"
+
+  Escenario: Scenario034A - Evaluación "pass"
+    Cuando presiono el botón "pass" en la pantalla "student"
+    Entonces debo estar en la pantalla "grade"
+    Y veo "5" en la vista "lower" de la pantalla "grade"
+    Y veo "6" en la vista "higher" de la pantalla "grade"
+
+  # Escenarios con navegación desde la pantalla "grade" hacia "student"
+
+  Escenario: Scenario0421A - Outstanding con navegación mediante botón "lower"
+    Dado que presiono el botón "outstanding" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "9" en la vista "lower" y "10" en la vista "higher"
+    Cuando presiono el botón "lower" en la pantalla "grade"
+    Entonces vuelvo a la pantalla "student"
+    Y veo "9" en la vista "grade" de la pantalla "student"
+
+  Escenario: Scenario0522A - Outstanding con navegación mediante botón "higher"
+    Dado que presiono el botón "outstanding" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "9" en la vista "lower" y "10" en la vista "higher"
+    Cuando presiono el botón "higher" en la pantalla "grade"
+    Entonces vuelvo a la pantalla "student"
+    Y veo "10" en la vista "grade" de la pantalla "student"
+
+  Escenario: Scenario0631A - Mention con navegación mediante botón "higher"
+    Dado que presiono el botón "mention" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "7" en la vista "lower" y "8" en la vista "higher"
+    Cuando presiono el botón "higher" en la pantalla "grade"
+    Entonces vuelvo a la pantalla "student"
+    Y veo "8" en la vista "grade" de la pantalla "student"
+
+  Escenario: Scenario0732A - Mention con navegación mediante botón "lower"
+    Dado que presiono el botón "mention" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "7" en la vista "lower" y "8" en la vista "higher"
+    Cuando presiono el botón "lower" en la pantalla "grade"
+    Entonces vuelvo a la pantalla "student"
+    Y veo "7" en la vista "grade" de la pantalla "student"
+
+  Escenario: Scenario0841A - Pass con navegación mediante botón "higher"
+    Dado que presiono el botón "pass" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "5" en la vista "lower" y "6" en la vista "higher"
+    Cuando presiono el botón "higher" en la pantalla "grade"
+    Entonces vuelvo a la pantalla "student"
+    Y veo "6" en la vista "grade" de la pantalla "student"
+
+  Escenario: Scenario0942A - Pass con navegación mediante botón "lower"
+    Dado que presiono el botón "pass" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "5" en la vista "lower" y "6" en la vista "higher"
+    Cuando presiono el botón "lower" en la pantalla "grade"
+    Entonces vuelvo a la pantalla "student"
+    Y veo "5" en la vista "grade" de la pantalla "student"
+
+  # Escenarios que involucran la rotación de pantalla
+
+  Escenario: Scenario102B - Outstanding con rotación en la pantalla "grade"
+    Dado que presiono el botón "outstanding" en la pantalla "student"
+    Y debo estar en la pantalla "grade"
+    Cuando giro la pantalla "grade"
+    Entonces veo "9" en la vista "lower" de la pantalla "grade"
+    Y veo "10" en la vista "higher" de la pantalla "grade"
+
+  Escenario: Scenario113B - Mention con rotación en la pantalla "grade"
+    Dado que presiono el botón "mention" en la pantalla "student"
+    Y debo estar en la pantalla "grade"
+    Cuando giro la pantalla "grade"
+    Entonces veo "7" en la vista "lower" de la pantalla "grade"
+    Y veo "8" en la vista "higher" de la pantalla "grade"
+
+  Escenario: Scenario124B - Pass con rotación en la pantalla "grade"
+    Dado que presiono el botón "pass" en la pantalla "student"
+    Y debo estar en la pantalla "grade"
+    Cuando giro la pantalla "grade"
+    Entonces veo "5" en la vista "lower" de la pantalla "grade"
+    Y veo "6" en la vista "higher" de la pantalla "grade"
+
+  Escenario: Scenario1321B - Outstanding con rotación y navegación mediante botón "lower"
+    Dado que presiono el botón "outstanding" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "9" en la vista "lower" y "10" en la vista "higher"
+    Y giro la pantalla "grade"
+    Y presiono el botón "lower" en la pantalla "grade" para volver a la pantalla "student"
+    Cuando giro la pantalla "student"
+    Entonces veo "9" en la vista "grade" de la pantalla "student"
+
+  Escenario: Scenario1422B - Outstanding con rotación y navegación mediante botón "higher"
+    Dado que presiono el botón "outstanding" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "9" en la vista "lower" y "10" en la vista "higher"
+    Y giro la pantalla "grade"
+    Y presiono el botón "higher" en la pantalla "grade" para volver a la pantalla "student"
+    Cuando giro la pantalla "student"
+    Entonces veo "10" en la vista "grade" de la pantalla "student"
+
+  Escenario: Scenario1531B - Mention con rotación y navegación mediante botón "higher"
+    Dado que presiono el botón "mention" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "7" en la vista "lower" y "8" en la vista "higher"
+    Y giro la pantalla "grade"
+    Y presiono el botón "higher" en la pantalla "grade" para volver a la pantalla "student"
+    Cuando giro la pantalla "student"
+    Entonces veo "8" en la vista "grade" de la pantalla "student"
+
+  Escenario: Scenario1632B - Mention con rotación y navegación mediante botón "lower"
+    Dado que presiono el botón "mention" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "7" en la vista "lower" y "8" en la vista "higher"
+    Y giro la pantalla "grade"
+    Y presiono el botón "lower" en la pantalla "grade" para volver a la pantalla "student"
+    Cuando giro la pantalla "student"
+    Entonces veo "7" en la vista "grade" de la pantalla "student"
+
+  Escenario: Scenario1741B - Pass con rotación y navegación mediante botón "higher"
+    Dado que presiono el botón "pass" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "5" en la vista "lower" y "6" en la vista "higher"
+    Y giro la pantalla "grade"
+    Y presiono el botón "higher" en la pantalla "grade" para volver a la pantalla "student"
+    Cuando giro la pantalla "student"
+    Entonces veo "6" en la vista "grade" de la pantalla "student"
+
+  Escenario: Scenario1842B - Pass con rotación y navegación mediante botón "lower"
+    Dado que presiono el botón "pass" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "5" en la vista "lower" y "6" en la vista "higher"
+    Y giro la pantalla "grade"
+    Y presiono el botón "lower" en la pantalla "grade" para volver a la pantalla "student"
+    Cuando giro la pantalla "student"
+    Entonces veo "5" en la vista "grade" de la pantalla "student"
+
+  # Escenarios con flujo que combina evaluaciones y navegación atrás
+
+  Escenario: Scenario195A - Flujo de "pass" a "mention" con navegación atrás
+    Dado que presiono el botón "pass" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "5" en la vista "lower" y "6" en la vista "higher"
+    Y presiono el botón "lower" en la pantalla "grade"
+    Y vuelvo a la pantalla "student" y veo "5" en la vista "grade"
+    Y presiono el botón "mention" en la pantalla "student"
+    Y debo estar en la pantalla "grade"
+    Y giro la pantalla "grade"
+    Y veo "7" en la vista "lower" y "8" en la vista "higher"
+    Cuando presiono el botón "back" en la pantalla "grade"
+    Entonces vuelvo a la pantalla "student"
+    Y veo "5" en la vista "grade" de la pantalla "student"
+
+  Escenario: Scenario205B - Flujo de "pass" a "mention" con rotación y navegación atrás
+    Dado que presiono el botón "pass" en la pantalla "student"
+    Y estoy en la pantalla "grade" donde se muestra "5" en la vista "lower" y "6" en la vista "higher"
+    Y presiono el botón "lower" en la pantalla "grade"
+    Y vuelvo a la pantalla "student" y veo "5" en la vista "grade"
+    Y presiono el botón "mention" en la pantalla "student"
+    Y debo estar en la pantalla "grade"
+    Y giro la pantalla "grade"
+    Y veo "7" en la vista "lower" y "8" en la vista "higher"
+    Y presiono el botón "back" en la pantalla "grade"
+    Y vuelvo a la pantalla "student"
+    Cuando giro la pantalla "student"
+    Entonces veo "5" en la vista "grade" de la pantalla "student"
