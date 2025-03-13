@@ -18,6 +18,10 @@ import androidx.test.core.app.ApplicationProvider;
 import androidx.test.espresso.matcher.ViewMatchers;
 
 import es.ulpgc.eite.studentgrade.student.StudentActivity;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 /**
  * Created by Luis on marzo, 2022
@@ -28,6 +32,7 @@ public class EspressoSteps {
 
   private ActivityScenario<StudentActivity> studentScenario;
 
+  @Given("I am on {string} screen")
   public void iAmOnScreen(String screen) {
 
     if (screen.equals("student") && studentScenario == null) {
@@ -45,6 +50,7 @@ public class EspressoSteps {
   }
 
 
+  @Then("I back on {string} screen")
   public void iBackOnScreen(String screen) {
 
     if (screen.equals("student")) {
@@ -65,6 +71,7 @@ public class EspressoSteps {
 
   }
 
+  @And("I am on {string} screen and see {string} value on {string} view")
   public void iAmOnScreenAndSeeValueOnView(
       String screen, String value, String view
   ) {
@@ -76,6 +83,7 @@ public class EspressoSteps {
 
   }
 
+  @When("I am on {string} screen and press {string} button")
   public void iAmOnScreenAndPressButton(String screen, String button) {
 
     if (screen.equals("student")) {
@@ -101,7 +109,7 @@ public class EspressoSteps {
 
   }
 
-
+  @And("I rotate {string} screen")
   public void iRotateScreen(String screen) {
 
     studentScenario.onActivity(activity -> {
