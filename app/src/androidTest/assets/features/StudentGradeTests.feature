@@ -206,6 +206,6 @@ Feature: Student Grade App
     And rotate "grade" screen
     And show "7" in "lower" view and "8" in "higher" view
     And press "back" button on "grade" screen
-    Then resume "student" screen
+    And resume "student" screen
     When rotate "student" screen
     Then show "5" in "grade" view on "student" screen
