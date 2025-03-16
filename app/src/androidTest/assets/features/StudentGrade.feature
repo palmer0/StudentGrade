@@ -1,51 +1,235 @@
-Feature: StudentGrade
+Feature: Student Grade
 
+  Scenario: Test01Scenario012A
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    When I am on "student" screen and press "outstanding" button
+    Then I am on "grade" screen
+    And I am on "grade" screen and see "9" value on "lower" view
+    And I am on "grade" screen and see "10" value on "higher" view
 
-  Scenario Outline: Scenario 1
-    Given I am on "<screen1>" screen
-    And I rotate "<screen1>" screen
-    And I am on "<screen2>" screen and see "<val0>" value on "<view0>" view
-    When I am on "<screen1>" screen and press "<button>" button
-    Then I am on "<screen2>" screen
-    And I am on "<screen2>" screen and see "<val1>" value on "<view1>" view
-    And I am on "<screen2>" screen and see "<val2>" value on "<view2>" view
+  Scenario: Test02Scenario023A
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    When I am on "student" screen and press "mention" button
+    Then I am on "grade" screen
+    And I am on "grade" screen and see "7" value on "lower" view
+    And I am on "grade" screen and see "8" value on "higher" view
 
-    Examples:
-      | screen1 | val0 | view0 | button      | screen2 | val1 | view1 | val2 | view2  |
-      | student | 0    | grade | outstanding | grade   | 9    | lower | 10   | higher |
-      | student | 0    | grade | mention     | grade   | 7    | lower | 8    | higher |
-      | student | 0    | grade | pass        | grade   | 5    | lower | 6    | higher |
+  Scenario: Test03Scenario034A
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    When I am on "student" screen and press "pass" button
+    Then I am on "grade" screen
+    And I am on "grade" screen and see "5" value on "lower" view
+    And I am on "grade" screen and see "6" value on "higher" view
 
+  Scenario: Test04Scenario0421A
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "outstanding" button
+    And I am on "grade" screen
+    And I am on "grade" screen and see "9" value on "lower" view
+    And I am on "grade" screen and see "10" value on "higher" view
+    When I am on "grade" screen and press "lower" button
+    Then I back on "student" screen
+    And I am on "student" screen and see "9" value on "grade" view
 
-  Scenario Outline: Scenario 2
-    Given I am on "<screen2>" screen
-    And I rotate "<screen2>" screen
-    And I am on "<screen2>" screen and see "<val1>" value on "<view1>" view
-    And I am on "<screen2>" screen and see "<val2>" value on "<view2>" view
-    When I am on "<screen2>" screen and press "<button>" button
-    Then I back on "<screen1>" screen
-    And I am on "<screen1>" screen and see "<val0>" value on "<view0>" view
+  Scenario: Test05Scenario0522A
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "outstanding" button
+    And I am on "grade" screen
+    And I am on "grade" screen and see "9" value on "lower" view
+    And I am on "grade" screen and see "10" value on "higher" view
+    When I am on "grade" screen and press "higher" button
+    Then I back on "student" screen
+    And I am on "student" screen and see "10" value on "grade" view
 
-    Examples:
-      | screen2 | val1 | view1 | val2 | view2  | button | screen1 | val0 | view0 |
-      | grade   | 9    | lower | 10   | higher | higher | student | 10   | grade |
-      | grade   | 9    | lower | 10   | higher | lower  | student | 9    | grade |
-      | grade   | 7    | lower | 8    | higher | higher | student | 8    | grade |
-      | grade   | 7    | lower | 8    | higher | lower  | student | 7    | grade |
-      | grade   | 5    | lower | 6    | higher | higher | student | 6    | grade |
-      | grade   | 5    | lower | 6    | higher | lower  | student | 5    | grade |
+  Scenario: Test06Scenario0631A
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "mention" button
+    And I am on "grade" screen
+    And I am on "grade" screen and see "7" value on "lower" view
+    And I am on "grade" screen and see "8" value on "higher" view
+    When I am on "grade" screen and press "higher" button
+    Then I back on "student" screen
+    And I am on "student" screen and see "8" value on "grade" view
 
+  Scenario: Test07Scenario0732A
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "mention" button
+    And I am on "grade" screen
+    And I am on "grade" screen and see "7" value on "lower" view
+    And I am on "grade" screen and see "8" value on "higher" view
+    When I am on "grade" screen and press "lower" button
+    Then I back on "student" screen
+    And I am on "student" screen and see "7" value on "grade" view
 
-  Scenario Outline: Scenario 3
-    Given I am on "<screen2>" screen
-    And I am on "<screen2>" screen and see "<val1>" value on "<view1>" view
-    And I am on "<screen2>" screen and see "<val2>" value on "<view2>" view
-    When I am on "<screen2>" screen and press "<button>" button
-    Then I back on "<screen1>" screen
-    And I am on "<screen1>" screen and see "<val0>" value on "<view0>" view
+  Scenario: Test08Scenario0841A
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "pass" button
+    And I am on "grade" screen
+    And I am on "grade" screen and see "5" value on "lower" view
+    And I am on "grade" screen and see "6" value on "higher" view
+    When I am on "grade" screen and press "higher" button
+    Then I back on "student" screen
+    And I am on "student" screen and see "6" value on "grade" view
 
-    Examples:
-      | screen2 | val1 | view1 | val2 | view2  | button | screen1 | val0 | view0 |
-      | grade   | 9    | lower | 10   | higher | back   | student | 0    | grade |
-      | grade   | 7    | lower | 8    | higher | back   | student | 0    | grade |
-      | grade   | 5    | lower | 6    | higher | back   | student | 0    | grade |
+  Scenario: Test09Scenario0942A
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "pass" button
+    And I am on "grade" screen
+    And I am on "grade" screen and see "5" value on "lower" view
+    And I am on "grade" screen and see "6" value on "higher" view
+    When I am on "grade" screen and press "lower" button
+    Then I back on "student" screen
+    And I am on "student" screen and see "5" value on "grade" view
+
+  Scenario: Test10Scenario102B
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "outstanding" button
+    And I am on "grade" screen
+    When I rotate "grade" screen
+    Then I am on "grade" screen and see "9" value on "lower" view
+    And I am on "grade" screen and see "10" value on "higher" view
+
+  Scenario: Test11Scenario113B
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "mention" button
+    And I am on "grade" screen
+    When I rotate "grade" screen
+    Then I am on "grade" screen and see "7" value on "lower" view
+    And I am on "grade" screen and see "8" value on "higher" view
+
+  Scenario: Test12Scenario124B
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "pass" button
+    And I am on "grade" screen
+    When I rotate "grade" screen
+    Then I am on "grade" screen and see "5" value on "lower" view
+    And I am on "grade" screen and see "6" value on "higher" view
+
+  Scenario: Test13Scenario1321B
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "outstanding" button
+    And I am on "grade" screen
+    When I rotate "grade" screen
+    Then I am on "grade" screen and see "9" value on "lower" view
+    And I am on "grade" screen and see "10" value on "higher" view
+    And I am on "grade" screen and press "lower" button
+    And I back on "student" screen
+    When I rotate "student" screen
+    Then I am on "student" screen and see "9" value on "grade" view
+
+  Scenario: Test14Scenario1422B
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "outstanding" button
+    And I am on "grade" screen
+    When I rotate "grade" screen
+    Then I am on "grade" screen and see "9" value on "lower" view
+    And I am on "grade" screen and see "10" value on "higher" view
+    And I am on "grade" screen and press "higher" button
+    And I back on "student" screen
+    When I rotate "student" screen
+    Then I am on "student" screen and see "10" value on "grade" view
+
+  Scenario: Test15Scenario1531B
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "mention" button
+    And I am on "grade" screen
+    When I rotate "grade" screen
+    Then I am on "grade" screen and see "7" value on "lower" view
+    And I am on "grade" screen and see "8" value on "higher" view
+    And I am on "grade" screen and press "higher" button
+    And I back on "student" screen
+    When I rotate "student" screen
+    Then I am on "student" screen and see "8" value on "grade" view
+
+  Scenario: Test16Scenario1632B
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "mention" button
+    And I am on "grade" screen
+    When I rotate "grade" screen
+    Then I am on "grade" screen and see "7" value on "lower" view
+    And I am on "grade" screen and see "8" value on "higher" view
+    And I am on "grade" screen and press "lower" button
+    And I back on "student" screen
+    When I rotate "student" screen
+    Then I am on "student" screen and see "7" value on "grade" view
+
+  Scenario: Test17Scenario1741B
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "pass" button
+    And I am on "grade" screen
+    When I rotate "grade" screen
+    Then I am on "grade" screen and see "5" value on "lower" view
+    And I am on "grade" screen and see "6" value on "higher" view
+    And I am on "grade" screen and press "higher" button
+    And I back on "student" screen
+    When I rotate "student" screen
+    Then I am on "student" screen and see "6" value on "grade" view
+
+  Scenario: Test18Scenario1842B
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "pass" button
+    And I am on "grade" screen
+    When I rotate "grade" screen
+    Then I am on "grade" screen and see "5" value on "lower" view
+    And I am on "grade" screen and see "6" value on "higher" view
+    And I am on "grade" screen and press "lower" button
+    And I back on "student" screen
+    When I rotate "student" screen
+    Then I am on "student" screen and see "5" value on "grade" view
+
+  Scenario: Test19Scenario195A
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "pass" button
+    And I am on "grade" screen
+    And I am on "grade" screen and see "5" value on "lower" view
+    And I am on "grade" screen and see "6" value on "higher" view
+    And I am on "grade" screen and press "lower" button
+    And I back on "student" screen
+    And I am on "student" screen and see "5" value on "grade" view
+    And I am on "student" screen and press "mention" button
+    And I am on "grade" screen
+    When I rotate "grade" screen
+    Then I am on "grade" screen and see "7" value on "lower" view
+    And I am on "grade" screen and see "8" value on "higher" view
+    When I am on "grade" screen and press "back" button
+    Then I back on "student" screen
+    And I am on "student" screen and see "5" value on "grade" view
+
+  Scenario: Test20Scenario205B
+    Given I am on "student" screen
+    And I am on "student" screen and see "0" value on "grade" view
+    And I am on "student" screen and press "pass" button
+    And I am on "grade" screen
+    And I am on "grade" screen and see "5" value on "lower" view
+    And I am on "grade" screen and see "6" value on "higher" view
+    And I am on "grade" screen and press "lower" button
+    And I back on "student" screen
+    And I am on "student" screen and see "5" value on "grade" view
+    And I am on "student" screen and press "mention" button
+    And I am on "grade" screen
+    When I rotate "grade" screen
+    Then I am on "grade" screen and see "7" value on "lower" view
+    And I am on "grade" screen and see "8" value on "higher" view
+    And I am on "grade" screen and press "back" button
+    And I back on "student" screen
+    When I rotate "student" screen
+    Then I am on "student" screen and see "5" value on "grade" view
