@@ -1,4 +1,4 @@
-Feature: StudentGrade
+Feature: Student Grade App
 
 
   Scenario Outline: Scenario 1
